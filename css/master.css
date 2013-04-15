@@ -1,0 +1,18 @@
+body {
+	font-family		: helvetica;
+}
+
+.titan {
+}
+
+.float_left {
+	float			: left;
+}
+
+.float_right {
+	float			: right;
+}
+
+.clear {
+	clear			: both;
+}

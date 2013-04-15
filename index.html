@@ -13,31 +13,38 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/base.js"></script>
 	<script src="/js/button.js"></script>
 	<script src="/js/spiderweb.js"></script>
+	<script src="/js/dropdown.js"></script>
 
 	<!-- css files -->
 	<link rel="stylesheet" href="/css/libraries/jquery-ui-1.8.9.custom.css" />
 	<link rel="stylesheet" href="/css/libraries/jquery.ui.autocomplete.css" />  
 	<link rel="stylesheet" href="/css/libraries/jquery.ui.core.css" />
 
+	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
 	<link rel="stylesheet" href="/css/spiderweb.css" />
+	<link rel="stylesheet" href="/css/dropdown.css" />
 </head>
 <body>
 	<h1>Titan Javascript Controls</h1>
 	<h3>License: (MIT) <br/>&copy; 2013 Scott Gay</h3>
 	<hr />
 	
+	<h2>Dropdown</h2>
+	<div id="dvDropdown"></div>	
+
 	<h2>Button</h2>
 	<div id="dvButton"></div>
 
 	<h2>Spiderweb</h2>
-	<div id="dvSpiderweb"></div>	
+	<div id="dvSpiderweb"></div>
+
 </body>
 </html>
 
 <script language="javascript">
 $(document).ready(function(){
-	// button
+	// button =================================================================
 	new titan.controls.button({
                 'container'     : $('#dvButton'),
                 'buttonText'    : 'Small Button',
@@ -63,7 +70,7 @@ $(document).ready(function(){
 		}
         });
 	
-	// spiderweb
+	// spiderweb ==============================================================
 	var spiderwebData = [
 		{"display" : "57", "id" : "yankees", "name" : "Yankees", "pictureUrl" : "/images/mlb/yankees.png"},
 		{"display" : "55", "id" : "giants", "name" : "Giants", "pictureUrl" : "/images/mlb/giants.png"},
@@ -99,5 +106,36 @@ $(document).ready(function(){
 		}
 	});
 
+	// dropdown ============================================================
+	var dropdownData = [
+		{"name" : "NY Yankees", "value" : "yankees", "image" : "/images/mlb/yankees.png"},
+		{"name" : "CHI Cubs", "value" : "cubs", "image" : "/images/mlb/cubs.png"},
+		{"name" : "SF Giants", "value" : "giants", "image" : "/images/mlb/giants.png"},
+		{"name" : "ATL Braves", "value" : "braves", "image" : "/images/mlb/braves.png"},
+		{"name" : "DET Tigers", "value" : "tigers", "image" : "/images/mlb/tigers.png"},
+		{"name" : "HOU Astros", "value" : "astros", "image" : "/images/mlb/astros.png"},
+		{"name" : "TX Rangers", "value" : "rangers", "image" : "/images/mlb/rangers.png"},
+		{"name" : "STL Cardinals", "value" : "cardinals", "image" : "/images/mlb/cardinals.png"},
+		{"name" : "ANA Angels", "value" : "angels", "image" : "/images/mlb/angels.png"},
+		{"name" : "SD Padres", "value" : "padres", "image" : "/images/mlb/padres.png"},
+		{"name" : "SEA Mariners", "value" : "mariners", "image" : "/images/mlb/mariners.png"},
+		{"name" : "MIN Twins", "value" : "twins", "image" : "/images/mlb/twins.png"},
+		{"name" : "BAL Orioles", "value" : "orioles", "image" : "/images/mlb/orioles.png"},
+		{"name" : "CLE Indians", "value" : "indians", "image" : "/images/mlb/indians.png"},
+		{"name" : "AZ Diamondbacks", "value" : "diamondbacks", "image" : "/images/mlb/diamondbacks.png"},
+		{"name" : "COL Rockies", "value" : "rockies", "image" : "/images/mlb/rockies.png"},
+		{"name" : "PIT Pirates", "value" : "pirates", "image" : "/images/mlb/pirates.png"}
+	];
+	var ctrlDropdown = new titan.controls.dropdown({
+		'container'	: $('#dvDropdown'),
+		'data'		: dropdownData,
+		'width'		: 300,
+		'onchange'	: function(item){
+			alert('Selected the '+item.name);
+		}	
+	});
+	ctrlDropdown.setValue({"name" : "COL Rockies", "value" : "rockies", "image" : "/images/mlb/rockies.png"});
+	
+	
 });
 </script>
