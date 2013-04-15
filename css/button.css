@@ -1,0 +1,17 @@
+button {
+	cursor	: pointer;
+}
+
+.button.small {
+	font-size	: 8pt;
+}
+
+.button.medium {
+	font-size	: 10pt;
+	padding 	: 5px;
+}
+
+.button.large {
+	font-size	: 12pt;
+	padding		: 10px;
+}

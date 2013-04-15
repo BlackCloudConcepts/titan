@@ -1,0 +1,22 @@
+.spider .opaque {
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}
+
+.spider .title {
+	font-family	: arial;
+	width		: 590px;
+	text-align	: center;
+	font-size	: 20pt;	
+	color		: #3b5998;
+}
+
+.spider .subtitle {
+	font-family	: arial;
+	width		: 590px;
+	text-align	: center;
+	font-size	: 14pt;	
+	color		: #3b5998;
+}
+
+

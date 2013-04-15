@@ -1,0 +1,103 @@
+<!--
+License: (MIT) Copyright (C) 2013 Scott Gay
+-->
+<html>
+<head>
+	<title>Titan Javascript Controls</title>
+	<!-- js files -->
+	<script src="/js/libraries/jquery.min.js"></script>
+	<script src="js/libraries/lowpro.jquery.js"></script>
+	<script src="js/libraries/excanvas.min.js"></script>
+
+	<script src="/js/browserdetect.js"></script>
+	<script src="/js/base.js"></script>
+	<script src="/js/button.js"></script>
+	<script src="/js/spiderweb.js"></script>
+
+	<!-- css files -->
+	<link rel="stylesheet" href="/css/libraries/jquery-ui-1.8.9.custom.css" />
+	<link rel="stylesheet" href="/css/libraries/jquery.ui.autocomplete.css" />  
+	<link rel="stylesheet" href="/css/libraries/jquery.ui.core.css" />
+
+	<link rel="stylesheet" href="/css/button.css" />
+	<link rel="stylesheet" href="/css/spiderweb.css" />
+</head>
+<body>
+	<h1>Titan Javascript Controls</h1>
+	<h3>License: (MIT) <br/>&copy; 2013 Scott Gay</h3>
+	<hr />
+	
+	<h2>Button</h2>
+	<div id="dvButton"></div>
+
+	<h2>Spiderweb</h2>
+	<div id="dvSpiderweb"></div>	
+</body>
+</html>
+
+<script language="javascript">
+$(document).ready(function(){
+	// button
+	new titan.controls.button({
+                'container'     : $('#dvButton'),
+                'buttonText'    : 'Small Button',
+                'buttonSize'    : 'small',
+		'onclick'	: function(){
+			alert('clicked the small button');
+		}
+        });
+	new titan.controls.button({
+                'container'     : $('#dvButton'),
+                'buttonText'    : 'Medium Button',
+                'buttonSize'    : 'medium',
+		'onclick'	: function(){
+			alert('clicked the medium button');
+		}
+        });
+	new titan.controls.button({
+                'container'     : $('#dvButton'),
+                'buttonText'    : 'Large Button',
+                'buttonSize'    : 'large',
+		'onclick'	: function(){
+			alert('clicked the large button');
+		}
+        });
+	
+	// spiderweb
+	var spiderwebData = [
+		{"display" : "57", "id" : "yankees", "name" : "Yankees", "pictureUrl" : "/images/mlb/yankees.png"},
+		{"display" : "55", "id" : "giants", "name" : "Giants", "pictureUrl" : "/images/mlb/giants.png"},
+		{"display" : "50", "id" : "cubs", "name" : "Cubs", "pictureUrl" : "/images/mlb/cubs.png"},
+		{"display" : "48", "id" : "braves", "name" : "Braves", "pictureUrl" : "/images/mlb/braves.png"},
+		{"display" : "47", "id" : "tigers", "name" : "Tigers", "pictureUrl" : "/images/mlb/tigers.png"},
+		{"display" : "46", "id" : "astros", "name" : "Astros", "pictureUrl" : "/images/mlb/astros.png"},
+		{"display" : "43", "id" : "rangers", "name" : "Rangers", "pictureUrl" : "/images/mlb/rangers.png"},
+		{"display" : "41", "id" : "cardinals", "name" : "Cardinals", "pictureUrl" : "/images/mlb/cardinals.png"},
+		{"display" : "40", "id" : "angels", "name" : "Angels", "pictureUrl" : "/images/mlb/angels.png"},
+		{"display" : "39", "id" : "padres", "name" : "Padred", "pictureUrl" : "/images/mlb/padres.png"},
+		{"display" : "37", "id" : "mariners", "name" : "Mariners", "pictureUrl" : "/images/mlb/mariners.png"},
+		{"display" : "34", "id" : "twins", "name" : "Twins", "pictureUrl" : "/images/mlb/twins.png"},
+		{"display" : "33", "id" : "orioles", "name" : "Orioles", "pictureUrl" : "/images/mlb/orioles.png"},
+		{"display" : "32", "id" : "indians", "name" : "Indians", "pictureUrl" : "/images/mlb/indians.png"},
+		{"display" : "31", "id" : "diamondbacks", "name" : "Diamondbacks", "pictureUrl" : "/images/mlb/diamondbacks.png"},
+		{"display" : "29", "id" : "rockies", "name" : "Rockies", "pictureUrl" : "/images/mlb/rockies.png"},
+		{"display" : "27", "id" : "pirates", "name" : "Pirates", "pictureUrl" : "/images/mlb/pirates.png"},
+		{"display" : "26", "id" : "royals", "name" : "Royals", "pictureUrl" : "/images/mlb/royals.png"},
+		{"display" : "25", "id" : "phillies", "name" : "Phillies", "pictureUrl" : "/images/mlb/phillies.png"},
+		{"display" : "24", "id" : "mets", "name" : "Mets", "pictureUrl" : "/images/mlb/mets.png"}
+	];
+	new titan.controls.spiderweb({
+		'container' 	: $('#dvSpiderweb'),
+		'data'		: spiderwebData,
+		'title'			: 'Major League Baseball',
+		'subtitle'		: 'Homerun Leaders',
+		'middlePictureUrl' 	: '/images/mlb/mlb.png',
+		'middlePictureHexColor' : '102576',
+		'displayHexColor'	: '88F798',
+		'onclick'	: function(item){
+			alert('You clicked on the '+item.name);
+		}
+	});
+
+});
+</script>
