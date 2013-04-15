@@ -1,3 +1,4 @@
+// License: (MIT) Copyright (C) 2013 Scott Gay
 titan.controls.button = $.klass(titan.controls.base,
 {
 	

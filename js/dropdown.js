@@ -1,3 +1,4 @@
+// License: (MIT) Copyright (C) 2013 Scott Gay
 titan.controls.dropdown = $.klass(titan.controls.base,
 {
 	// TODO: Support for nested items in dropdown

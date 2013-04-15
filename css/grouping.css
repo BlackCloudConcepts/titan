@@ -1,0 +1,19 @@
+/* License: (MIT) Copyright (C) 2013 Scott Gay */
+.group {
+	-moz-border-radius: 5px 5px 5px 5px;
+    	background: none repeat scroll 0 0 #FFFFFF;
+    	border: 1px solid #AAAAAA;
+    	color: #333333;
+    	font-size: 10pt;
+    	padding: 2px 5px;
+}
+
+.group > .type {
+	font-weight 	: bold;
+	font-size	: 10pt;
+	margin-bottom	: 5px;
+}
+
+.group > .label {
+	font-size 	: 10pt;
+}

@@ -1,0 +1,59 @@
+/* License: (MIT) Copyright (C) 2013 Scott Gay */
+.toggle.outer {
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    	background: none repeat scroll 0 0 #f3f3f3;
+    	border: 1px solid #AAAAAA;
+    	color: #FFFFFF;
+    	font-size: 10pt;
+    	height: 19px;
+	width: 52px;
+    	line-height: 1;
+    	padding-left : 0px;
+	padding-top : 0px;
+	cursor:pointer;
+}
+
+.toggle > .inner {
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    	border: 1px solid #ffffff;
+    	color: #FFFFFF;
+    	font-size: 8pt;
+    	height: 13px;
+	width: 17px;
+    	line-height: 1;
+	padding-left : 1px;
+	padding-top : 4px;
+	text-align : center;
+	cursor:pointer;
+}
+
+.toggle > .innertext {
+    	color: #999999;
+    	font-size: 8pt;
+    	height: 14px;
+	width: 30px;
+    	line-height: 1;
+	padding-left : 1px;
+	padding-top : 4px;
+	text-align : center;
+	cursor:pointer;
+}
+
+.toggle > .on {
+    	background: none repeat scroll 0 0 #3b5998;
+	float : left;
+	box-shadow : 0px 0px 1px 1px #3b5998;
+	-moz-box-shadow : 0px 0px 1px 1px #3b5998;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+
+.toggle > .off {
+    	background: none repeat scroll 0 0 #AAAAAA;
+	float : right;
+	box-shadow : 0px 0px 1px 1px #AAAAAA;
+	-moz-box-shadow : 0px 0px 1px 1px #AAAAAA;
+
+}

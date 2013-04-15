@@ -7,12 +7,16 @@ Titan Javascript Controls
 - requires PIE.htc for IE8 canvas support
 
 Controls:
-- Dropdown
+- Dropdown Control
 -- support for images and autocomplete
-- Button
+- Button Control
 -- standard button replacement, available for expansion into more dynamic control
-- Spiderweb 
+- Spiderweb Control
 -- canvas visualization giving a graphical representation to compare counts across various elements
+- Toggle Control
+-- simple on/off switch like toggle
+- Grouping Control
+-- groups together a group of toggles
 
 Demo:
 - http://titan.blackcloudconcepts.com/

@@ -1,3 +1,4 @@
+// License: (MIT) Copyright (C) 2013 Scott Gay
 titan.controls.spiderweb = $.klass(titan.controls.base,
 {
 

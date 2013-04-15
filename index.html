@@ -14,6 +14,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/button.js"></script>
 	<script src="/js/spiderweb.js"></script>
 	<script src="/js/dropdown.js"></script>
+	<script src="/js/toggle.js"></script>
+	<script src="/js/grouping.js"></script>
 
 	<!-- css files -->
 	<link rel="stylesheet" href="/css/libraries/jquery-ui-1.8.9.custom.css" />
@@ -24,21 +26,28 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/button.css" />
 	<link rel="stylesheet" href="/css/spiderweb.css" />
 	<link rel="stylesheet" href="/css/dropdown.css" />
+	<link rel="stylesheet" href="/css/toggle.css" />
+	<link rel="stylesheet" href="/css/grouping.css" />
 </head>
 <body>
 	<h1>Titan Javascript Controls</h1>
 	<h3>License: (MIT) <br/>&copy; 2013 Scott Gay</h3>
 	<hr />
 	
-	<h2>Dropdown</h2>
+	<h2>Dropdown Control</h2>
 	<div id="dvDropdown"></div>	
 
-	<h2>Button</h2>
+	<h2>Button Control</h2>
 	<div id="dvButton"></div>
 
-	<h2>Spiderweb</h2>
+	<h2>Spiderweb Control</h2>
 	<div id="dvSpiderweb"></div>
 
+	<h2>Toggle Control</h2>
+	<div id="dvToggle"></div>
+
+	<h2>Grouping Control</h2>
+	<div id="dvGrouping"></div>
 </body>
 </html>
 
@@ -136,6 +145,27 @@ $(document).ready(function(){
 	});
 	ctrlDropdown.setValue({"name" : "COL Rockies", "value" : "rockies", "image" : "/images/mlb/rockies.png"});
 	
-	
+	// toggle ===============================================================
+	new titan.controls.toggle({
+		'container'     : $('#dvToggle'),
+		'textOn'        : 'Show',
+		'textOff'       : 'Hide',
+		'checked'       : true
+	});	
+
+	// grouping =============================================================
+	var groupingData = [
+		{"id" : "yankees", "name" : "Yankees", "visible" : true},
+		{"id" : "cubs", "name" : "Cubs", "visible" : false}
+	];
+	new titan.controls.grouping({
+                'container'     : $('#dvGrouping'),
+                'width'         : 200,
+                'type'          : '',
+                'values'        : groupingData,
+                'onChange'      : function(id, val){
+			alert("The "+id+" changed to "+val);
+		}
+        });
 });
 </script>
