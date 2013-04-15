@@ -10,3 +10,6 @@ Controls:
 
 Demo:
 - http://titan.blackcloudconcepts.com/
+
+GitHub:
+- https://github.com/BlackCloudConcepts/titan
