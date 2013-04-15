@@ -2,11 +2,17 @@ License: (MIT)
 Copyright (C) 2013 Scott Gay
 
 Titan Javascript Controls
-- requires jquery, lowpro.jquery
+- requires jquery
+- requires lowpro.jquery (for javascript OO support)
+- requires PIE.htc for IE8 canvas support
 
 Controls:
+- Dropdown
+-- support for images and autocomplete
 - Button
-- Spiderweb
+-- standard button replacement, available for expansion into more dynamic control
+- Spiderweb 
+-- canvas visualization giving a graphical representation to compare counts across various elements
 
 Demo:
 - http://titan.blackcloudconcepts.com/
