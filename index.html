@@ -7,10 +7,17 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<meta http-equiv="X-UA-Compatible" content="IE=9"/> <!-- this is required for the spiderweb control and use of HTML5 canvas to work -->
 
 	<!-- js files -->
+	<!-- req all controls -->
 	<script src="/js/libraries/jquery.min.js"></script>
-	<script src="js/libraries/lowpro.jquery.js"></script>
-	<script src="js/libraries/excanvas.min.js"></script>  <!-- IE8 Canvas Support -->
+	<script src="/js/libraries/lowpro.jquery.js"></script>
 
+	<!-- req spiderweb control -->
+	<script src="/js/libraries/excanvas.min.js"></script>  <!-- IE8 Canvas Support -->
+
+	<!-- req popup control -->
+	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+	<!-- titan js files -->
 	<script src="/js/browserdetect.js"></script>
 	<script src="/js/base.js"></script>
 	<script src="/js/button.js"></script>
@@ -19,12 +26,15 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/toggle.js"></script>
 	<script src="/js/grouping.js"></script>
 	<script src="/js/tooltip.js"></script>
+	<script src="/js/popup.js"></script>
 
 	<!-- css files -->
-	<link rel="stylesheet" href="/css/libraries/jquery-ui-1.8.9.custom.css" /> <!-- used in button control -->
-	<link rel="stylesheet" href="/css/libraries/jquery.ui.autocomplete.css" />  <!-- used in button control -->
-	<link rel="stylesheet" href="/css/libraries/jquery.ui.core.css" /> <!-- used in button control -->
+	<!-- req button control -->
+	<link rel="stylesheet" href="/css/libraries/jquery-ui-1.8.9.custom.css" /> 
+	<link rel="stylesheet" href="/css/libraries/jquery.ui.autocomplete.css" /> 
+	<link rel="stylesheet" href="/css/libraries/jquery.ui.core.css" />
 
+	<!-- titan css files -->
 	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
 	<link rel="stylesheet" href="/css/spiderweb.css" />
@@ -32,6 +42,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/toggle.css" />
 	<link rel="stylesheet" href="/css/grouping.css" />
 	<link rel="stylesheet" href="/css/tooltip.css" />
+	<link rel="stylesheet" href="/css/popup.css" />
 </head>
 <body style="background-color:#968C6C;margin-top:0px;margin-bottom:0px;">
 	<div style="width:800px;margin-right:auto;margin-left:auto;background-color:#ffffff;top:0;left:0;padding:5px 30px 50px 30px;">
@@ -58,7 +69,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<h2>Button Control</h2>
 		<div id="dvButton"></div>
 
-
+		<h2>Popup Control</h2>
+		<div id="dvPopup" style="background-image:url(/images/mlb/cubs.png);height:100px;width:100px;cursor:pointer;"></div>
 	</div>
 </body>
 </html>
@@ -188,5 +200,26 @@ $(document).ready(function(){
                 'xOffset' : 20,
                 'yOffset' : -40
         });
+
+	// popup ============================================================
+	$('#dvPopup').bind('click', function(){
+		var content = $('<div>').html('The Chicago Cubs organization was founded in 1870.  They have officially been known as the Cubs since 1903.  Prior to that they were the White Stockings, Colts, and Orphans.');
+		var headerExtra = $('<div>').html('<img src="/images/mlb/cubs.png" style="height:15px;width:15px;" />');
+		new titan.controls.popup({
+			'container' : $('#dvPopup'),
+			'width' : 400,
+			'height' : 200,
+			'minWidth' : 300,
+			'maxWidth' : 500,
+			'minHeight' : 150,
+			'maxHeight' : 400,
+			'headerText' : 'Cubbies Info',
+			'headerExtra' : headerExtra,
+			'content' : content,
+			'blackout' : true,
+			'draggable' : true,
+			'resizable' : true
+		});
+	});
 });
 </script>

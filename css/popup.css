@@ -1,0 +1,38 @@
+/* License: (MIT) Copyright (C) 2013 Scott Gay */
+.titan .blackout {
+	top                 	: -0px;
+    	left                	: -0px;
+    	position            	: fixed;
+    	opacity             	: 0.7;
+    	filter              	: alpha(opacity=70);
+    	z-index             	: 99;
+    	height              	: 100%;
+    	width               	: 100%;
+    	background-color    	: #ffffff;
+}
+
+.titan .popup {
+	border			: 1px solid #999999;
+	border-radius		: 4px;
+	background-color	: #ffffff;
+	position		: fixed;
+	margin-left		: 10px;
+	z-index			: 100;
+}
+
+.titan .popup > .pheader {
+	font-size		: 10pt;
+	font-weight		: bold;
+	color			: #ffffff;
+	background-color	: #3b5998;
+	padding			: 5px;
+	cursor			: move;
+	border-top-left-radius	: 3px;
+	border-top-right-radius	: 3px;
+}
+
+.titan .popup > .content {
+	font-size		: 10pt;
+	color			: #000000;
+	padding			: 5px;
+}

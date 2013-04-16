@@ -27,6 +27,9 @@ http://css3pie.com is used for IE8 support.  Make sure PIE.htc exists as the pat
 - Tooltip Control
 -- simple control to add a info or help popup on mouseover
 
+- Popup Control
+-- popup with support for draggable, resizable (with limits), background blackout, header and content options 
+
 *** see index.html for usage examples of each control
 
 Demo:
@@ -34,5 +37,4 @@ Demo:
 
 GitHub:
 - https://github.com/BlackCloudConcepts/titan
-
-- 
+ 
