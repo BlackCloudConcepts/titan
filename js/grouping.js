@@ -12,6 +12,8 @@ titan.controls.grouping = $.klass(titan.controls.base,
 		// - type
 		// - onChange (function call)
 
+		this.parameters.container.addClass('titan');
+
 		this.controls = [];
 		this.render();
 	},
@@ -28,10 +30,7 @@ titan.controls.grouping = $.klass(titan.controls.base,
 		for (var i = 0;i < len;i++)
 		{
 			var labelWidth = parseInt(this.parameters.width) - 63;
-			this.controls['lbl_' + vals[i].id] 	= $('<div>', {'class' : 'float_left smlabel ellipsis', 'style' : 'cursor:pointer;color:#3b5998;text-decoration:underline;margin-top:3px;width:' + labelWidth + 'px;'}).appendTo(divGroup).html(vals[i].name);
-			this.controls['lbl_' + vals[i].id].bind('click', {v : vals[i]}, function(event){
-				window.open("http://www.facebook.com/"+event.data.v.facebook_id);
-			});
+			this.controls['lbl_' + vals[i].id] 	= $('<div>', {'class' : 'float_left smlabel ellipsis', 'style' : 'color:#3b5998;margin-top:3px;width:' + labelWidth + 'px;'}).appendTo(divGroup).html(vals[i].name);
 			var divToggle 				= $('<div>', {'class' : 'float_right'}).appendTo(divGroup);
 			this.controls['val_' + vals[i].id]	= new titan.controls.toggle({
 				'container' 	: divToggle,

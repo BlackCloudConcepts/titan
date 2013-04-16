@@ -123,10 +123,11 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		var _this = this;
 		this.ddlDropdown.empty();
 		$.each(this.parameters.data, function(key, value){
-			if (value.name.indexOf(_this.ddlInput.html().replace(/\<br\>/g,'')) != -1){
+			if (value.name.toLowerCase().indexOf(_this.ddlInput.html().replace(/\<br\>/g,'').toLowerCase()) != -1){
 				var li = $('<div>', {'id' : value.value, 'class' : 'ddlListItem', 'style' : 'width:'+(_this.parameters.width-45)+'px;'})
 					.appendTo(_this.ddlDropdown)
 					.bind('click', function(){
+						li.removeClass('ddlSelectedItem');
 						_this.selectItem(li, value, true);
 					});
 				var image = $('<div>', {'class' : 'float_left ddlImage'}).appendTo(li);

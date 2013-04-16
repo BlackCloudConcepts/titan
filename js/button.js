@@ -10,6 +10,8 @@ titan.controls.button = $.klass(titan.controls.base,
 		// - buttonText
 		// - buttonSize [small, medium, large]
 		// - onclick
+		
+		this.parameters.container.addClass('titan');
 			
 		if (this.parameters.buttonSize == undefined)
 		{

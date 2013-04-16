@@ -11,6 +11,8 @@ titan.controls.toggle = $.klass(titan.controls.base,
 		// - textOff
 		// - checked
 
+		this.parameters.container.addClass('titan');
+
 		if (this.parameters.textOn != undefined && this.parameters.textOff != undefined)
 		{
 			this.on = this.parameters.textOn;

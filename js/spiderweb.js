@@ -15,7 +15,7 @@ titan.controls.spiderweb = $.klass(titan.controls.base,
 		// - data [{'display': '', 'id': '', 'name' : '', 'pictureUrl'}]
 		// - onclick (callback function)
 
-		this.parameters.container.addClass('spider');
+		this.parameters.container.addClass('titanspider');
 		this.data = this.parameters.data;
 		this.layout = [];
 		this.getLayout();
