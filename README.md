@@ -12,7 +12,7 @@ Controls:
 -- support for images and autocomplete
 
 - Button Control
--- standard button replacement, available for expansion into more dynamic control
+-- simple button replacement, options for size, color, hover effects
 
 - Spiderweb Control
 -- canvas visualization giving a graphical representation to compare counts across various elements
