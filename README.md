@@ -24,6 +24,9 @@ http://css3pie.com is used for IE8 support.  Make sure PIE.htc exists as the pat
 - Grouping Control
 -- groups together a group of toggles
 
+- Tooltip Control
+-- simple control to add a info or help popup on mouseover
+
 *** see index.html for usage examples of each control
 
 Demo:

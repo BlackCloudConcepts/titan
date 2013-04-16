@@ -18,6 +18,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/dropdown.js"></script>
 	<script src="/js/toggle.js"></script>
 	<script src="/js/grouping.js"></script>
+	<script src="/js/tooltip.js"></script>
 
 	<!-- css files -->
 	<link rel="stylesheet" href="/css/libraries/jquery-ui-1.8.9.custom.css" /> <!-- used in button control -->
@@ -30,6 +31,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/dropdown.css" />
 	<link rel="stylesheet" href="/css/toggle.css" />
 	<link rel="stylesheet" href="/css/grouping.css" />
+	<link rel="stylesheet" href="/css/tooltip.css" />
 </head>
 <body style="background-color:#968C6C;margin-top:0px;margin-bottom:0px;">
 	<div style="width:800px;margin-right:auto;margin-left:auto;background-color:#ffffff;top:0;left:0;padding:5px 30px 50px 30px;">
@@ -49,6 +51,9 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 
 		<h2>Spiderweb Control</h2>
 		<div id="dvSpiderweb"></div>
+
+		<h2>Tooltip Control</h2>
+		<div id="dvTooltip" style="background-image:url(/images/mlb/yankees.png);height:100px;width:100px;cursor:help;"></div>
 
 		<h2>Button Control</h2>
 		<div id="dvButton"></div>
@@ -173,6 +178,15 @@ $(document).ready(function(){
                 'onChange'      : function(id, val){
 			alert("The "+id+" changed to "+val);
 		}
+        });
+
+	// tooltip ===========================================================
+	new titan.controls.tooltip({
+                'container' : $('#dvTooltip'),
+                'text' : 'The New York Yankees were established in 1901.',
+                'width' : '200',
+                'xOffset' : 20,
+                'yOffset' : -40
         });
 });
 </script>

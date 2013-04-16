@@ -1,0 +1,16 @@
+.titan .tooltip {
+	position		: absolute;
+	border-style		: solid;
+	border-width		: 1px;
+	border-color		: #666666;
+	border-radius		: 4px;
+	background-color	: #efefef;
+/*	box-shadow		: 0px 0px 5px 8px #efefef;
+	-moz-box-shadow		: 0px 0px 5px 8px #efefef;*/
+	font-size		: 9pt;
+	padding			: 5px;
+	z-index			: 200;
+	color			: #333333;
+	text-align		: left;
+	font-weight		: normal;
+}
