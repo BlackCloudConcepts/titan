@@ -6,7 +6,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<title>Titan Javascript Controls</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=9"/> <!-- this is required for the spiderweb control and use of HTML5 canvas to work -->
 
-	<!-- js files -->
+	<!-- EXTRA REQUIRED FILES -->
 	<!-- req all controls -->
 	<script src="/js/libraries/jquery.min.js"></script>
 	<script src="/js/libraries/lowpro.jquery.js"></script>
@@ -18,7 +18,10 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<!-- req popup control -->
 	<script src="/js/libraries/jquery-ui.js"></script>
 
-	<!-- titan js files -->
+	<!-- TITAN FILES -->
+	<script src="/combined-min.js"></script>
+	<link rel="stylesheet" href="/combined-min.css" />
+<!--
 	<script src="/js/browserdetect.js"></script>
 	<script src="/js/base.js"></script>
 	<script src="/js/button.js"></script>
@@ -28,9 +31,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/grouping.js"></script>
 	<script src="/js/tooltip.js"></script>
 	<script src="/js/popup.js"></script>
+	<script src="/js/inputTextbox.js"></script>
 
-	<!-- css files -->
-	<!-- titan css files -->
 	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
 	<link rel="stylesheet" href="/css/spiderweb.css" />
@@ -39,6 +41,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/grouping.css" />
 	<link rel="stylesheet" href="/css/tooltip.css" />
 	<link rel="stylesheet" href="/css/popup.css" />
+	<link rel="stylesheet" href="/css/inputTextbox.css" />
+-->
 </head>
 <body style="background-color:#968C6C;margin-top:0px;margin-bottom:0px;">
 	<div style="width:800px;margin-right:auto;margin-left:auto;background-color:#ffffff;top:0;left:0;padding:5px 30px 50px 30px;">
@@ -67,6 +71,9 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 
 		<h2>Popup Control</h2>
 		<div id="dvPopup" style="background-image:url(/images/mlb/cubs.png);height:100px;width:100px;cursor:pointer;"></div>
+
+		<h2>Input Textbox Control</h2>
+		<div id="dvTextbox"></div>
 	</div>
 </body>
 </html>
@@ -195,10 +202,10 @@ $(document).ready(function(){
 	// tooltip ===========================================================
 	new titan.controls.tooltip({
                 'container' : $('#dvTooltip'),
-                'text' : 'The New York Yankees were established in 1901.',
-                'width' : '200',
-                'xOffset' : 20,
-                'yOffset' : -40
+                'text' 		: 'The New York Yankees were established in 1901.',
+                'width' 	: '200',
+                'xOffset' 	: 20,
+                'yOffset' 	: -40
         });
 
 	// popup ============================================================
@@ -206,20 +213,30 @@ $(document).ready(function(){
 		var content = $('<div>').html('The Chicago Cubs organization was founded in 1870.  They have officially been known as the Cubs since 1903.  Prior to that they were the White Stockings, Colts, and Orphans.');
 		var headerExtra = $('<div>').html('<img src="/images/mlb/cubs.png" style="height:15px;width:15px;" />');
 		new titan.controls.popup({
-			'container' : $('#dvPopup'),
-			'width' : 400,
-			'height' : 200,
-			'minWidth' : 300,
-			'maxWidth' : 500,
-			'minHeight' : 150,
-			'maxHeight' : 400,
-			'headerText' : 'Cubbies Info',
-			'headerExtra' : headerExtra,
-			'content' : content,
-			'blackout' : true,
-			'draggable' : true,
-			'resizable' : true
+			'container' 	: $('#dvPopup'),
+			'width' 	: 400,
+			'height' 	: 200,
+			'minWidth' 	: 300,
+			'maxWidth' 	: 500,
+			'minHeight' 	: 150,
+			'maxHeight' 	: 400,
+			'headerText' 	: 'Cubbies Info',
+			'headerExtra' 	: headerExtra,
+			'content' 	: content,
+			'blackout' 	: true,
+			'draggable' 	: true,
+			'resizable' 	: true
 		});
 	});
+
+	// textbox ========================================================
+	var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var ctrlTextbox = new titan.controls.inputTextbox({
+		'container'		: $('#dvTextbox'),
+		'placeholder'		: 'Email Address',
+		'width'			: 300,
+		'validationRegex'	: emailRegex
+	});
+	ctrlTextbox.setValue('mytestemail@test.com');
 });
 </script>
