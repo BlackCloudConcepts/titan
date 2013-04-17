@@ -35,6 +35,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/inputTextbox.js"></script>
 	<script src="/js/radioGroup.js"></script>
 	<script src="/js/checkbox.js"></script>
+	<script src="/js/textarea.js"></script>
 
 	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
@@ -47,8 +48,9 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/inputTextbox.css" />
 	<link rel="stylesheet" href="/css/radioGroup.css" />
 	<link rel="stylesheet" href="/css/checkbox.css" />
-
+	<link rel="stylesheet" href="/css/textarea.css" />
 -->
+
 	<style>
 		a { font-size:10pt;color:#0C60AF;font-weight:bold;text-decoration:none; }
 		h1 { color:#0C60AF; }
@@ -72,7 +74,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<a href="#hButton">button</a> -
 		<a href="#hPopup">popup</a> -
 		<a href="#hRadioGroup">radio group</a> -
-		<a href="#hCheckbox">checkbox</a>
+		<a href="#hCheckbox">checkbox</a> -
+		<a href="#hTextarea">textarea</a>
 		<hr />
 		
 		<h2 id="hTextbox">Input Textbox Control</h2>
@@ -134,6 +137,12 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<h5>Parameters: container*, label, checked, onchange</h5>
 		<h5>Exposed Actions: setValue(val), getValue()</h5>
 		<div id="dvCheckbox"></div>
+
+		<h2 id="hTextarea">Textarea Control</h2>
+		<h5>Features: placeholder, no resize</h5>
+		<h5>Parameters: container*, placeholder*, height, width, value, onchange</h5>
+		<h5>Exposed Actions: setValue(val), getValue()</h5>
+		<div id="dvTextarea"></div>
 
 	</div>
 </body>
@@ -321,6 +330,18 @@ $(document).ready(function(){
 		'label'			: 'STL Cardinals',
 		'onchange'		: function(){
 			alert(ctrlCheckbox.getValue());
+		}
+	});
+
+	// textarea =====================================================
+	var ctrlTextarea = new titan.controls.textarea({
+		'container'		: $('#dvTextarea'),
+		'placeholder'		: 'Description',
+		'width'			: 400,
+		'height'		: 150,
+		'value'			: 'This is the year Cubs fans!',
+		'onchange'		: function(){
+			alert(ctrlTextarea.getValue());
 		}
 	});
 });

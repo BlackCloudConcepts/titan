@@ -1,0 +1,15 @@
+.titan .taplaceholder {
+	font-size		: 8pt;
+	color			: #999999;
+	background-color	: #ffffff;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	position		: absolute;
+	margin-top		: -4px;
+	margin-left		: 5px;
+}
+
+.titan .textarea {
+	resize			: none;
+	padding			: 10px;
+}

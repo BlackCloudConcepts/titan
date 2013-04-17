@@ -90,6 +90,14 @@ Parameters: container*, label, checked, onchange
 
 Exposed Actions: setValue(val), getValue()
 
+Textarea Control
+
+Features: placeholder, no resize
+
+Parameters: container*, placeholder*, height, width, value, onchange
+
+Exposed Actions: setValue(val), getValue()
+
 *** see index.html for usage examples of each control
 
 Demo:
