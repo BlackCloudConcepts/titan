@@ -8,95 +8,62 @@ Titan Javascript Controls
 - requires lowpro.jquery (for javascript OO support)
 
 Controls:
-- Input Textbox Control
+Input Textbox Control
+- Features: placeholder, validation
+- Parameters: container*, placeholder*, width, validationRegex
+- Exposed Actions: setValue(val), getValue(), isValid()
 
-Features: placeholder, validation
+Dropdown Control
+- Features: autoComplete, list item images
+- Parameters: container*, data*, width, onchange
+- Exposed Actions: setValue(val), getValue()
 
-Parameters: container*, placeholder*, width, validationRegex
+Toggle Control
+- Features: on/off style toggle, custom on/off text
+- Parameters: container*, textOn, textOff, checked
+- Exposed Actions: setValue(val), getValue()
 
-Exposed Actions: setValue(val), getValue(), isValid()
+Grouping Control
+- Features: grouping for multiple toggle controls
+- Parameters: container*, width, values, type, onChange
+- Exposed Actions: NA
 
-- Dropdown Control
-
-Features: autoComplete, list item images
-
-Parameters: container*, data*, width, onchange
-
-Exposed Actions: setValue(val), getValue()
-
-- Toggle Control
-
-Features: on/off style toggle, custom on/off text
-
-Parameters: container*, textOn, textOff, checked
-
-Exposed Actions: setValue(val), getValue()
-
-- Grouping Control
-
-Features: grouping for multiple toggle controls
-
-Parameters: container*, width, values, type, onChange
-
-Exposed Actions: NA
-
-- Spiderweb Control
-
-Features: visualization of items, weighted by data order, clickable
-
-Parameters: container*, title, subtitle, middlePictureUrl*, middlePictureHexColor*, displayHexColor*, data*, onclick*
-
-Exposed Actions: NA
+Spiderweb Control
+- Features: visualization of items, weighted by data order, clickable
+- Parameters: container*, title, subtitle, middlePictureUrl*, middlePictureHexColor*, displayHexColor*, data*, onclick*
+- Exposed Actions: NA
 
 *** http://css3pie.com is used for IE8 support.  Make sure PIE.htc exists as the path specified in spiderweb.js.  Update if necessary.  Also excanvas.min.js is required for IE8 canvas support.
 
-- Tooltip Control
+Tooltip Control
+- Features: on hover info display
+- Parameters: container*, width, xOffset, yOffset, text*
+- Exposed Actions: hide(), show()
 
-Features: on hover info display
+Button Control
+- Features: customizable buttons
+- Parameters: container*, buttonText*, buttonColor, buttonSize, hoverEffect, onclick*
+- Exposed Actions: NA
 
-Parameters: container*, width, xOffset, yOffset, text*
+Popup Control
+- Features: resizeable, draggable, background blackout
+- Parameters: container*, width, height, minWidth, maxWidth, minHeight, maxHeight, headerText*, headerExtra, content*, blackout, draggable, resizeable, resizeCallback, closeCallback
+- Exposed Actions: close(), hide(), show()
 
-Exposed Actions: hide(), show()
+Radio Group Control
+- Features: radio button group with labels
+- Parameters: container*, items*, selected, onchange
+- Exposed Actions: setValue(val), getValue()
 
-- Button Control
-
-Features: customizable buttons
-
-Parameters: container*, buttonText*, buttonColor, buttonSize, hoverEffect, onclick*
-
-Exposed Actions: NA
-
-- Popup Control
-
-Features: resizeable, draggable, background blackout
-
-Parameters: container*, width, height, minWidth, maxWidth, minHeight, maxHeight, headerText*, headerExtra, content*, blackout, draggable, resizeable, resizeCallback, closeCallback
-
-Exposed Actions: close(), hide(), show()
-
-- Radio Group Control
-
-Features: radio button group with labels
-
-Parameters: container*, items*, selected, onchange
-
-Exposed Actions: setValue(val), getValue()
-
-- Checkbox Control
-
-Features: checkbox with label
-
-Parameters: container*, label, checked, onchange
-
-Exposed Actions: setValue(val), getValue()
+Checkbox Control
+- Features: checkbox with label
+- Parameters: container*, label, checked, onchange
+- Exposed Actions: setValue(val), getValue()
 
 Textarea Control
-
-Features: placeholder, no resize
-
-Parameters: container*, placeholder*, height, width, value, onchange
-
-Exposed Actions: setValue(val), getValue()
+- Features: placeholder, no resize
+- Parameters: container*, placeholder*, height, width, value, onchange
+- Exposed Actions: setValue(val), getValue()
 
 *** see index.html for usage examples of each control
 
