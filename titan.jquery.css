@@ -179,9 +179,14 @@ button {
 }
 
 .titan .group > .type {
-	font-weight 	: bold;
-	font-size	: 10pt;
-	margin-bottom	: 5px;
+	font-weight 		: bold;
+	font-size		: 10pt;
+	color			: #999999;
+	background-color	: #ffffff;
+	position		: absolute;
+	margin-top		: -9px;
+	padding-left		: 3px;
+	padding-right		: 3px;
 }
 
 .titan .group > .label {
@@ -381,4 +386,48 @@ body {
 	color			: #333333;
 	text-align		: left;
 	font-weight		: normal;
+}
+.titan .radio {
+	cursor			: pointer;
+}
+
+.titan .radiolabel {
+	font-size		: 10pt;
+	color			: #333333;
+	margin-left		: 5px;
+	margin-top		: 8px;
+}
+
+.titan .radio.checked {
+	background-image	: url(/images/radio_checked.png);
+	height			: 25px;
+	width			: 25px;
+}
+
+.titan .radio.unchecked {
+	background-image	: url(/images/radio_unchecked.png);
+	height			: 25px;
+	width			: 25px;
+}
+.titan .cbox {
+	cursor			: pointer;
+}
+
+.titan .checkboxlabel {
+	font-size		: 10pt;
+	color			: #333333;
+	margin-left		: 5px;
+	margin-top		: 8px;
+}
+
+.titan .cbox.checked {
+	background-image	: url(/images/checkbox_checked.png);
+	height			: 25px;
+	width			: 25px;
+}
+
+.titan .cbox.unchecked {
+	background-image	: url(/images/checkbox_unchecked.png);
+	height			: 25px;
+	width			: 25px;
 }

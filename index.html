@@ -19,10 +19,10 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/libraries/jquery-ui.js"></script>
 
 	<!-- TITAN FILES -->
-<!--
 	<script src="/titan.jquery.min.js"></script>
 	<link rel="stylesheet" href="/titan.jquery.min.css" />
--->
+
+<!--
 	<script src="/js/browserdetect.js"></script>
 	<script src="/js/base.js"></script>
 	<script src="/js/button.js"></script>
@@ -33,6 +33,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/tooltip.js"></script>
 	<script src="/js/popup.js"></script>
 	<script src="/js/inputTextbox.js"></script>
+	<script src="/js/radioGroup.js"></script>
+	<script src="/js/checkbox.js"></script>
 
 	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
@@ -43,8 +45,10 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/tooltip.css" />
 	<link rel="stylesheet" href="/css/popup.css" />
 	<link rel="stylesheet" href="/css/inputTextbox.css" />
+	<link rel="stylesheet" href="/css/radioGroup.css" />
+	<link rel="stylesheet" href="/css/checkbox.css" />
 
-
+-->
 	<style>
 		a { font-size:10pt;color:#0C60AF;font-weight:bold;text-decoration:none; }
 		h1 { color:#0C60AF; }
@@ -66,7 +70,9 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<a href="#hSpiderweb">spiderweb</a> - 
 		<a href="#hTooltip">tooltip</a> -
 		<a href="#hButton">button</a> -
-		<a href="#hPopup">popup</a> 
+		<a href="#hPopup">popup</a> -
+		<a href="#hRadioGroup">radio group</a> -
+		<a href="#hCheckbox">checkbox</a>
 		<hr />
 		
 		<h2 id="hTextbox">Input Textbox Control</h2>
@@ -116,6 +122,18 @@ License: (MIT) Copyright (C) 2013 Scott Gay
                 <h5>Parameters: container*, width, height, minWidth, maxWidth, minHeight, maxHeight, headerText*, headerExtra, content*, blackout, draggable, resizeable, resizeCallback, closeCallback</h5>
                 <h5>Exposed Actions: close(), hide(), show()</h5>
 		<div id="dvPopup" style="background-image:url(/images/mlb/cubs.png);height:100px;width:100px;cursor:pointer;"></div>
+
+		<h2 id="hRadioGroup">Radio Group Control</h2>
+		<h5>Features: radio button group with labels</h5>
+		<h5>Parameters: container*, items*, selected, onchange</h5>
+		<h5>Exposed Actions: setValue(val), getValue()</h5>
+		<div id="dvRadioGroup"></div>
+
+		<h2 id="hCheckbox">Checkbox Control</h2>
+		<h5>Features: checkbox with label</h5>
+		<h5>Parameters: container*, label, checked, onchange</h5>
+		<h5>Exposed Actions: setValue(val), getValue()</h5>
+		<div id="dvCheckbox"></div>
 
 	</div>
 </body>
@@ -281,5 +299,29 @@ $(document).ready(function(){
 		'validationRegex'	: emailRegex
 	});
 	ctrlTextbox.setValue('mytestemail@test.com');
+
+	// radio group ===================================================
+	var radioItems = [
+		{"name" : "CHI Cubs", "value" : "cubs"},
+		{"name" : "NY Yankees", "value" : "yankees"},
+		{"name" : "TX Rangers", "value" : "rangers"}
+	];
+	var ctrlRadioGroup = new titan.controls.radioGroup({
+		'container' 		: $('#dvRadioGroup'),
+		'items'			: radioItems,
+		'selected'		: {"name" : "TX Rangers", "value" : "rangers"},
+		'onchange'		: function(){
+			alert(ctrlRadioGroup.getValue());
+		}
+	});
+
+	// checkbox =====================================================
+	var ctrlCheckbox = new titan.controls.checkbox({
+		'container'		: $('#dvCheckbox'),
+		'label'			: 'STL Cardinals',
+		'onchange'		: function(){
+			alert(ctrlCheckbox.getValue());
+		}
+	});
 });
 </script>

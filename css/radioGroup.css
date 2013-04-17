@@ -1,0 +1,22 @@
+.titan .radio {
+	cursor			: pointer;
+}
+
+.titan .radiolabel {
+	font-size		: 10pt;
+	color			: #333333;
+	margin-left		: 5px;
+	margin-top		: 8px;
+}
+
+.titan .radio.checked {
+	background-image	: url(/images/radio_checked.png);
+	height			: 25px;
+	width			: 25px;
+}
+
+.titan .radio.unchecked {
+	background-image	: url(/images/radio_unchecked.png);
+	height			: 25px;
+	width			: 25px;
+}

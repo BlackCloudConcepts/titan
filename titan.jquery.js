@@ -190,10 +190,13 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		// parameters:
 		// - container
 		// - data [{'name' : '', 'value' : '', 'image' : ''}]
-		// - width
+		// - width (default: 300)
 		// - onchange
-
+		
 		this.parameters.container.addClass('titan');
+		if (this.parameters.width == undefined)
+			this.parameters.width = 300;
+
 		this.render();
 	},
 
@@ -340,8 +343,10 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		this.ddlSelected.show();
 		this.ddlArrow.hide();	
 		this.ddlRemove.show();
-		if (fireOnchange)
-			this.parameters.onchange(this.selected);
+		if (fireOnchange){
+			if (this.parameters.onchange != undefined)
+				this.parameters.onchange(this.selected);
+		}
 	},
 
 	getValue : function(){
@@ -382,10 +387,10 @@ titan.controls.grouping = $.klass(titan.controls.base,
 	render : function()
 	{
 		var divGroup	= $('<div>', {'class' : 'group', 'style' : 'width:' + this.parameters.width + 'px;'}).appendTo(this.parameters.container);
-				  $('<div>', {'class' : 'float_left type'}).appendTo(divGroup).html(this.parameters.type);		
-		var selType	= $('<div>', {'class' : 'float_right'}).appendTo(divGroup);
-				  $('<div>', {'class' : 'clear'}).appendTo(divGroup);
- 		
+				  $('<div>', {'class' : 'type'}).appendTo(divGroup).html(this.parameters.type);		
+	
+		$('<div>', {'style' : 'height:10px;width:10px;'}).appendTo(divGroup); 	
+	
 		var len = this.parameters.values.length;
 		var vals = this.parameters.values;
 		for (var i = 0;i < len;i++)
@@ -467,6 +472,10 @@ titan.controls.inputTextbox = $.klass(titan.controls.base,
 			this.dvValidation.removeClass('valPass');
 			this.dvValidation.addClass('valFail');	
 		}
+	},
+
+	isValid : function(){
+		return this.parameters.validationRegex.test(this.getValue());
 	},
 
 	setValue : function(val)
@@ -744,10 +753,6 @@ titan.controls.spiderweb = $.klass(titan.controls.base,
 		$('<img>', {'src' : this.parameters.middlePictureUrl, 'style' : 'position:absolute;font-size:12pt;z-index:5;margin-left:'+nameLeft+'px;margin-top:'+nameTop+'px;text-align:center;'}).appendTo($('#spiderdiv'));
 
 	},
-		
-	startChat : function(item){
-		launchChat(item, 'top');
-	},
 
 	isIE8 : function(){
 		var browserName = BrowserDetect.browser;
@@ -927,5 +932,143 @@ titan.controls.tooltip = $.klass(titan.controls.base,
 	{
 		this.tooltip.show();
 	}	
+
+});
+// License: (MIT) Copyright (C) 2013 Scott Gay
+titan.controls.radioGroup = $.klass(titan.controls.base,
+{
+	
+	initialize : function(parameters)
+	{
+		this.parameters = parameters;
+		// parameters:
+		// - container
+		// - items
+		// - selected
+		// - onchange
+	
+		this.parameters.container.addClass('titan');
+			
+		this.render();
+	},
+
+	render : function()
+	{
+		var _this = this;
+		this.selected = undefined;
+		$.each(this.parameters.items, function(key, value){
+			var stateClass = 'unchecked';
+			if (_this.parameters.selected != undefined){
+				if (value.value == _this.parameters.selected.value){
+					_this.selected = value;
+					stateClass = 'checked';
+				}
+			}
+			_this.radio = $('<div>', {'id' : 'rdo_'+value.value, 'class' : 'radio float_left '+stateClass}).appendTo(_this.parameters.container);
+			$('<div>', {'class' : 'radiolabel float_left'}).appendTo(_this.parameters.container).html(value.name);
+			$('<div>', {'class' : 'clear'}).appendTo(_this.parameters.container);
+
+			_this.radio.bind('click', function(){
+				_this.switchSelected(value, true);
+			});
+		});
+	},
+
+	switchSelected : function(value, fireCallback){
+		if (this.selected != undefined){
+			if (value.value != this.selected.value){
+				this.selected = value.value;
+				$('.radio').removeClass('checked').addClass('unchecked');
+				$('#rdo_'+value.value).removeClass('unchecked').addClass('checked');
+				if (this.parameters.onchange != undefined && fireCallback)
+					this.parameters.onchange();
+			}
+		}
+		else {
+			this.selected = value.value;
+			$('#rdo_'+value.value).removeClass('unchecked').addClass('checked');
+			if (this.parameters.onchange != undefined && fireCallback)
+				this.parameters.onchange();
+		}
+	},
+		
+	getValue : function(){
+		return this.selected;
+	},
+
+	setValue : function(val){
+		this.switchSelected(val, false);
+	}
+
+});
+// License: (MIT) Copyright (C) 2013 Scott Gay
+titan.controls.checkbox = $.klass(titan.controls.base,
+{
+	
+	initialize : function(parameters)
+	{
+		this.parameters = parameters;
+		// parameters:
+		// - container
+		// - label
+		// - checked (default false)
+		// - onchange
+
+		this.parameters.container.addClass('titan');
+
+		if (this.parameters.label == undefined)
+			this.parameters.label = '';
+		if (this.parameters.checked == undefined)
+			this.parameters.checked = false;
+		
+		this.render();
+	},
+
+	render : function()
+	{
+		var _this = this;
+		this.checked = this.parameters.checked;
+		this.cbox = $('<div>', {'class' : 'cbox float_left'}).appendTo(this.parameters.container);
+		$('<div>', {'class' : 'checkboxlabel float_left'}).appendTo(this.parameters.container).html(this.parameters.label);
+		$('<div>', {'class' : 'clear'}).appendTo(this.parameters.container);
+
+		if (this.checked)
+			this.cbox.addClass('checked');
+		else
+			this.cbox.addClass('unchecked');
+
+		this.cbox.bind('click', function(){
+			if (_this.checked){
+				_this.checked = false;
+				_this.cbox.removeClass('checked');
+				_this.cbox.addClass('unchecked');
+			}
+			else {
+				_this.checked = true;
+				_this.cbox.removeClass('unchecked');
+				_this.cbox.addClass('checked');
+			}
+			if (_this.parameters.onchange != undefined)
+				_this.parameters.onchange();
+		});
+	},
+
+	getValue : function(){
+		return this.checked;
+	},
+	
+	setValue : function(val){
+		this.checked = val;
+		if (this.checked){
+			this.checked = true;
+			this.cbox.removeClass('unchecked');
+			this.cbox.addClass('checked');
+		}
+		else {
+			this.checked = false;
+			this.cbox.removeClass('checked');
+			this.cbox.addClass('unchecked');
+		}
+	}
 
 });

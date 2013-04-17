@@ -1,0 +1,22 @@
+.titan .cbox {
+	cursor			: pointer;
+}
+
+.titan .checkboxlabel {
+	font-size		: 10pt;
+	color			: #333333;
+	margin-left		: 5px;
+	margin-top		: 8px;
+}
+
+.titan .cbox.checked {
+	background-image	: url(/images/checkbox_checked.png);
+	height			: 25px;
+	width			: 25px;
+}
+
+.titan .cbox.unchecked {
+	background-image	: url(/images/checkbox_unchecked.png);
+	height			: 25px;
+	width			: 25px;
+}

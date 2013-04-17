@@ -74,6 +74,22 @@ Parameters: container*, width, height, minWidth, maxWidth, minHeight, maxHeight,
 
 Exposed Actions: close(), hide(), show()
 
+- Radio Group Control
+
+Features: radio button group with labels
+
+Parameters: container*, items*, selected, onchange
+
+Exposed Actions: setValue(val), getValue()
+
+- Checkbox Control
+
+Features: checkbox with label
+
+Parameters: container*, label, checked, onchange
+
+Exposed Actions: setValue(val), getValue()
+
 *** see index.html for usage examples of each control
 
 Demo:
