@@ -8,10 +8,13 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		// parameters:
 		// - container
 		// - data [{'name' : '', 'value' : '', 'image' : ''}]
-		// - width
+		// - width (default: 300)
 		// - onchange
-
+		
 		this.parameters.container.addClass('titan');
+		if (this.parameters.width == undefined)
+			this.parameters.width = 300;
+
 		this.render();
 	},
 
@@ -158,8 +161,10 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		this.ddlSelected.show();
 		this.ddlArrow.hide();	
 		this.ddlRemove.show();
-		if (fireOnchange)
-			this.parameters.onchange(this.selected);
+		if (fireOnchange){
+			if (this.parameters.onchange != undefined)
+				this.parameters.onchange(this.selected);
+		}
 	},
 
 	getValue : function(){

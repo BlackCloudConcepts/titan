@@ -9,9 +9,14 @@
 }
 
 .titan .group > .type {
-	font-weight 	: bold;
-	font-size	: 10pt;
-	margin-bottom	: 5px;
+	font-weight 		: bold;
+	font-size		: 10pt;
+	color			: #999999;
+	background-color	: #ffffff;
+	position		: absolute;
+	margin-top		: -9px;
+	padding-left		: 3px;
+	padding-right		: 3px;
 }
 
 .titan .group > .label {

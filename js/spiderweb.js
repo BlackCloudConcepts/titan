@@ -123,10 +123,6 @@ titan.controls.spiderweb = $.klass(titan.controls.base,
 		$('<img>', {'src' : this.parameters.middlePictureUrl, 'style' : 'position:absolute;font-size:12pt;z-index:5;margin-left:'+nameLeft+'px;margin-top:'+nameTop+'px;text-align:center;'}).appendTo($('#spiderdiv'));
 
 	},
-		
-	startChat : function(item){
-		launchChat(item, 'top');
-	},
 
 	isIE8 : function(){
 		var browserName = BrowserDetect.browser;

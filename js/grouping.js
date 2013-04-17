@@ -21,10 +21,10 @@ titan.controls.grouping = $.klass(titan.controls.base,
 	render : function()
 	{
 		var divGroup	= $('<div>', {'class' : 'group', 'style' : 'width:' + this.parameters.width + 'px;'}).appendTo(this.parameters.container);
-				  $('<div>', {'class' : 'float_left type'}).appendTo(divGroup).html(this.parameters.type);		
-		var selType	= $('<div>', {'class' : 'float_right'}).appendTo(divGroup);
-				  $('<div>', {'class' : 'clear'}).appendTo(divGroup);
- 		
+				  $('<div>', {'class' : 'type'}).appendTo(divGroup).html(this.parameters.type);		
+	
+		$('<div>', {'style' : 'height:10px;width:10px;'}).appendTo(divGroup); 	
+	
 		var len = this.parameters.values.length;
 		var vals = this.parameters.values;
 		for (var i = 0;i < len;i++)

@@ -19,9 +19,10 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/libraries/jquery-ui.js"></script>
 
 	<!-- TITAN FILES -->
+<!--
 	<script src="/titan.jquery.min.js"></script>
 	<link rel="stylesheet" href="/titan.jquery.min.css" />
-<!--
+-->
 	<script src="/js/browserdetect.js"></script>
 	<script src="/js/base.js"></script>
 	<script src="/js/button.js"></script>
@@ -42,38 +43,80 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/tooltip.css" />
 	<link rel="stylesheet" href="/css/popup.css" />
 	<link rel="stylesheet" href="/css/inputTextbox.css" />
--->
+
+
+	<style>
+		a { font-size:10pt;color:#0C60AF;font-weight:bold;text-decoration:none; }
+		h1 { color:#0C60AF; }
+		h3 { color:#999999; }
+		h2 { color:#0C60AF;margin-top:40px; }
+		h5 { color:#2E96F7; }
+	</style>
 </head>
 <body style="background-color:#968C6C;margin-top:0px;margin-bottom:0px;">
 	<div style="width:800px;margin-right:auto;margin-left:auto;background-color:#ffffff;top:0;left:0;padding:5px 30px 50px 30px;">
 		<h1>Titan Javascript Controls - Demos</h1>
 		<h3>License: (MIT) <br/>&copy; 2013 Scott Gay</h3>
-		<a href="https://github.com/BlackCloudConcepts/titan" target="_blank" style="font-size:14pt;color:#3B5998;">Titan Javascript Controls @ GitHub</a>
+		<a href="https://github.com/BlackCloudConcepts/titan" style="color:#2E96F7;" target="_blank">Titan Javascript Controls @ GitHub</a>
+		<hr />
+		<a href="#hTextbox">textbox</a> - 
+		<a href="#hDropdown">dropdown</a> - 
+		<a href="#hToggle">toggle</a> - 
+		<a href="#hGrouping">toggle grouping</a> - 
+		<a href="#hSpiderweb">spiderweb</a> - 
+		<a href="#hTooltip">tooltip</a> -
+		<a href="#hButton">button</a> -
+		<a href="#hPopup">popup</a> 
 		<hr />
 		
-		<h2>Dropdown Control</h2>
+		<h2 id="hTextbox">Input Textbox Control</h2>
+		<h5>Features: placeholder, validation</h5>
+		<h5>Parameters: container*, placeholder*, width, validationRegex</h5>
+		<h5>Exposed Actions: setValue(val), getValue(), isValid()</h5> 
+		<div id="dvTextbox"></div>
+
+		<h2 id="hDropdown">Dropdown Control</h2>
+		<h5>Features: autoComplete, list item images</h5>
+                <h5>Parameters: container*, data*, width, onchange</h5>
+                <h5>Exposed Actions: setValue(val), getValue()</h5>
 		<div id="dvDropdown"></div>	
 
-		<h2>Toggle Control</h2>
+		<h2 id="hToggle">Toggle Control</h2>
+		<h5>Features: on/off style toggle, custom on/off text</h5>
+                <h5>Parameters: container*, textOn, textOff, checked</h5>
+                <h5>Exposed Actions: setValue(val), getValue()</h5>
 		<div id="dvToggle"></div>
 
-		<h2>Grouping Control</h2>
+		<h2 id="hGrouping">Grouping Control</h2>
+		<h5>Features: grouping for multiple toggle controls</h5>
+                <h5>Parameters: container*, width, values, type, onChange</h5>
+                <h5>Exposed Actions: NA</h5>
 		<div id="dvGrouping"></div>
 
-		<h2>Spiderweb Control</h2>
+		<h2 id="hSpiderweb">Spiderweb Control</h2>
+		<h5>Features: visualization of items, weighted by data order, clickable</h5>
+                <h5>Parameters: container*, title, subtitle, middlePictureUrl*, middlePictureHexColor*, displayHexColor*, data*, onclick*</h5>
+                <h5>Exposed Actions: NA</h5>
 		<div id="dvSpiderweb"></div>
 
-		<h2>Tooltip Control</h2>
+		<h2 id="hTooltip">Tooltip Control</h2>
+		<h5>Features: on hover info display</h5>
+                <h5>Parameters: container*, width, xOffset, yOffset, text*</h5>
+                <h5>Exposed Actions: hide(), show()</h5>
 		<div id="dvTooltip" style="background-image:url(/images/mlb/yankees.png);height:100px;width:100px;cursor:help;"></div>
 
-		<h2>Button Control</h2>
+		<h2 id="hButton">Button Control</h2>
+		<h5>Features: customizable buttons</h5>
+                <h5>Parameters: container*, buttonText*, buttonColor, buttonSize, hoverEffect, onclick*</h5>
+                <h5>Exposed Actions: NA</h5>
 		<div id="dvButton"></div>
 
-		<h2>Popup Control</h2>
+		<h2 id="hPopup">Popup Control</h2>
+		<h5>Features: resizeable, draggable, background blackout</h5>
+                <h5>Parameters: container*, width, height, minWidth, maxWidth, minHeight, maxHeight, headerText*, headerExtra, content*, blackout, draggable, resizeable, resizeCallback, closeCallback</h5>
+                <h5>Exposed Actions: close(), hide(), show()</h5>
 		<div id="dvPopup" style="background-image:url(/images/mlb/cubs.png);height:100px;width:100px;cursor:pointer;"></div>
 
-		<h2>Input Textbox Control</h2>
-		<div id="dvTextbox"></div>
 	</div>
 </body>
 </html>
@@ -192,7 +235,7 @@ $(document).ready(function(){
 	new titan.controls.grouping({
                 'container'     : $('#dvGrouping'),
                 'width'         : 200,
-                'type'          : '',
+                'type'          : 'Baseball Team Info',
                 'values'        : groupingData,
                 'onChange'      : function(id, val){
 			alert("The "+id+" changed to "+val);
