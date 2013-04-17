@@ -30,6 +30,9 @@ http://css3pie.com is used for IE8 support.  Make sure PIE.htc exists as the pat
 - Popup Control
 -- popup with support for draggable, resizable (with limits), background blackout, header and content options 
 
+- Input Textbox Control
+-- textbox with support for placeholders text and validation
+
 *** see index.html for usage examples of each control
 
 Demo:
