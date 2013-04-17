@@ -7,7 +7,17 @@ Titan Javascript Controls
 - requires jquery
 - requires lowpro.jquery (for javascript OO support)
 
+Demo:
+
+- http://titan.blackcloudconcepts.com/
+
+GitHub:
+
+- https://github.com/BlackCloudConcepts/titan
+ 
 Controls:
+
+*** see index.html for usage examples of each control
 
 Input Textbox Control
 - Features: placeholder, validation
@@ -66,11 +76,4 @@ Textarea Control
 - Parameters: container*, placeholder*, height, width, value, onchange
 - Exposed Actions: setValue(val), getValue()
 
-*** see index.html for usage examples of each control
 
-Demo:
-- http://titan.blackcloudconcepts.com/
-
-GitHub:
-- https://github.com/BlackCloudConcepts/titan
- 
