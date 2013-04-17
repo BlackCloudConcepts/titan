@@ -19,12 +19,12 @@ done
 
 if [[ $name == "css" ]]
 then
-    	cat css/button.css css/dropdown.css css/grouping.css css/inputTextbox.css css/master.css css/popup.css css/spiderweb.css css/toggle.css css/tooltip.css > combined.css
-    	java -jar /yui/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar combined.css > combined-min.css
+    	cat css/button.css css/dropdown.css css/grouping.css css/inputTextbox.css css/master.css css/popup.css css/spiderweb.css css/toggle.css css/tooltip.css > titan.jquery.css
+    	java -jar /yui/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar titan.jquery.css > titan.jquery.min.css
 fi
 
 if [[ $name == "js" ]]
 then
-	cat js/base.js js/browserdetect.js js/button.js js/dropdown.js js/grouping.js js/inputTextbox.js js/popup.js js/spiderweb.js js/toggle.js js/tooltip.js > combined.js
-	java -jar /yui/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar combined.js > combined-min.js
+	cat js/base.js js/browserdetect.js js/button.js js/dropdown.js js/grouping.js js/inputTextbox.js js/popup.js js/spiderweb.js js/toggle.js js/tooltip.js > titan.jquery.js
+	java -jar /yui/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar titan.jquery.js > titan.jquery.min.js
 fi
