@@ -8,6 +8,7 @@ Titan Javascript Controls
 - requires lowpro.jquery (for javascript OO support)
 
 Controls:
+
 Input Textbox Control
 - Features: placeholder, validation
 - Parameters: container*, placeholder*, width, validationRegex
