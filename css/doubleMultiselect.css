@@ -1,0 +1,39 @@
+/* License: (MIT) Copyright (C) 2013 Scott Gay */
+.titan .multiarrow {
+	margin-left		: 10px;
+	margin-right		: 10px;
+	height			: 60px;
+	width			: 30px;
+	background-image	: url(/images/multi_arrow_right.png);	
+}
+
+.titan .multiselect {
+	border-style		: solid;
+	border-width		: 1px;
+	border-color		: #999999;
+	border-radius		: 5px;
+	overflow-x		: auto;
+}
+
+.titan .multiitem {
+	padding			: 4px;
+	height			: 30px;
+	cursor			: pointer;
+}
+
+.titan .multiselected {
+	opacity			: 0.4;
+	filter			: alpha(opacity=40);
+}
+
+.titan .multihover {
+	background-color	: #B7D2FF;
+}
+
+.titan .multiitem .itemtext {
+	font-size		: 10pt;
+	color			: #666666;
+	margin-left		: 5px;
+	margin-top		: 8px;
+}
+

@@ -19,10 +19,11 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/libraries/jquery-ui.js"></script>
 
 	<!-- TITAN FILES -->
+<!--
 	<script src="/titan.jquery.min.js"></script>
 	<link rel="stylesheet" href="/titan.jquery.min.css" />
 
-<!--
+-->
 	<script src="/js/browserdetect.js"></script>
 	<script src="/js/base.js"></script>
 	<script src="/js/button.js"></script>
@@ -36,6 +37,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/radioGroup.js"></script>
 	<script src="/js/checkbox.js"></script>
 	<script src="/js/textarea.js"></script>
+	<script src="/js/doubleMultiselect.js"></script>
 
 	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
@@ -49,7 +51,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/radioGroup.css" />
 	<link rel="stylesheet" href="/css/checkbox.css" />
 	<link rel="stylesheet" href="/css/textarea.css" />
--->
+	<link rel="stylesheet" href="/css/doubleMultiselect.css" />
 
 	<style>
 		a { font-size:10pt;color:#0C60AF;font-weight:bold;text-decoration:none; }
@@ -75,7 +77,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<a href="#hPopup">popup</a> -
 		<a href="#hRadioGroup">radio group</a> -
 		<a href="#hCheckbox">checkbox</a> -
-		<a href="#hTextarea">textarea</a>
+		<a href="#hTextarea">textarea</a> -
+		<a href="#hDoubleMultiselect">double multiselect</a>
 		<hr />
 		
 		<h2 id="hTextbox">Input Textbox Control</h2>
@@ -143,6 +146,12 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<h5>Parameters: container*, placeholder*, height, width, value, onchange</h5>
 		<h5>Exposed Actions: setValue(val), getValue()</h5>
 		<div id="dvTextarea"></div>
+
+		<h2 id="hDoubleMultiselect">Double Multiselect Control</h2>
+		<h5>Features: multiselect control</h5>
+		<h5>Parameters: container*, items, height, width, onchange</h5>
+		<h5>Exposed Actions: setValues(vals), getValues()</h5>
+		<div id="dvDoubleMultiselect"></div>		
 
 	</div>
 </body>
@@ -344,5 +353,28 @@ $(document).ready(function(){
 			alert(ctrlTextarea.getValue());
 		}
 	});
+
+	// double multiselect ==========================================
+	var doubleMultiselectItems = [
+		{"id" : "cubs", "name" : "CHI Cubs", "picture_url" : "/images/mlb/cubs.png"},
+		{"id" : "yankees", "name" : "NY Yankees", "picture_url" : "/images/mlb/yankees.png"},
+		{"id" : "rangers", "name" : "TX Rangers", "picture_url" : "/images/mlb/rangers.png"},
+		{"id" : "cardinals", "name" : "STL Cardinals", "picture_url" : "/images/mlb/cardinals.png"},
+		{"id" : "giants", "name" : "SF Giants", "picture_url" : "/images/mlb/giants.png"},
+		{"id" : "mets", "name" : "NY Mets", "picture_url" : "/images/mlb/mets.png"},
+		{"id" : "rockies", "name" : "COL Rockies", "picture_url" : "/images/mlb/rockies.png"},
+		{"id" : "padres", "name" : "SD Padres", "picture_url" : "/images/mlb/padres.png"}
+	];
+	var ctrlDoubleMultiselect = new titan.controls.doubleMultiselect({
+		'container'		: $('#dvDoubleMultiselect'),
+		'items'			: doubleMultiselectItems,
+		'height'		: 200,
+		'width'			: 600,
+		'onchange'		: function(){
+//			console.log(ctrlDoubleMultiselect.getValues());
+			alert(ctrlDoubleMultiselect.getValues());
+		}	
+	});
+	ctrlDoubleMultiselect.setValues([{"id" : "cardinals", "name" : "STL Cardinals", "picture_url" : "/images/mlb/cardinals.png"}]);
 });
 </script>

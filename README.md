@@ -76,4 +76,8 @@ Textarea Control
 - Parameters: container*, placeholder*, height, width, value, onchange
 - Exposed Actions: setValue(val), getValue()
 
+Double Muiltselect Control
+- Features: multiselect control
+- Parameters: container*, items, selected, height, width, onchange
+- Exposed Actions: setValues(vals), getValues()
 

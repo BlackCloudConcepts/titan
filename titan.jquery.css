@@ -387,6 +387,7 @@ body {
 	text-align		: left;
 	font-weight		: normal;
 }
+/* License: (MIT) Copyright (C) 2013 Scott Gay */
 .titan .radio {
 	cursor			: pointer;
 }
@@ -409,6 +410,7 @@ body {
 	height			: 25px;
 	width			: 25px;
 }
+/* License: (MIT) Copyright (C) 2013 Scott Gay */
 .titan .cbox {
 	cursor			: pointer;
 }
