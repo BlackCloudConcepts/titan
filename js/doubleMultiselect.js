@@ -44,13 +44,14 @@ titan.controls.doubleMultiselect = $.klass(titan.controls.base,
 			dvItem.bind('mouseenter', function(){ dvItem.addClass('multihover'); });
 			dvItem.bind('mouseleave', function(){ dvItem.removeClass('multihover'); });
 			dvItem.bind('click', function(){ 
-				_this.selectItem(dvItem, value, true);
+				_this.selectItem(value, true);
 			});
 		});
 	},
 
-	selectItem : function(dvItem, value, runonchange){
+	selectItem : function(value, runonchange){
 		var _this = this;
+		var dvItem = $('#multi_'+value.id);
 		if ($.inArray(value, _this.selected) == -1){
 			_this.selected.push(value);
 			var dvSelected = dvItem.clone().attr('id', 'multiS_'+value.id).appendTo(_this.dvRight);
@@ -61,16 +62,9 @@ titan.controls.doubleMultiselect = $.klass(titan.controls.base,
 			dvSelected.bind('mouseenter', function(){ dvSelected.addClass('multihover'); });
 			dvSelected.bind('mouseleave', function(){ dvSelected.removeClass('multihover'); });
 			dvSelected.bind('click', function(){
-				dvItem.removeClass('multiselected');
-				var newArr = [];
-				$.each(_this.selected, function(key, sel){
-					if (sel.id != dvSelected.attr('id').replace('multiS_',''))
-						newArr.push(sel);
-				});
-				_this.selected = newArr;
-				dvSelected.remove();
-				if (_this.parameters.onchange != undefined)
-					_this.parameters.onchange();
+				var arr = [];
+				arr.push(value);
+				_this.removeValues(arr);
 			});
 			if (_this.parameters.onchange != undefined && runonchange)
 				_this.parameters.onchange();
@@ -84,8 +78,25 @@ titan.controls.doubleMultiselect = $.klass(titan.controls.base,
 	setValues : function(vals){
 		var _this = this;
 		$.each(vals, function(key, value){
+			_this.selectItem(value, false);
+		});
+	},
+
+	removeValues : function(vals){
+		var _this = this;
+		$.each(vals, function(key, value){
 			var dvItem = $('#multi_'+value.id);
-			_this.selectItem(dvItem, value, false);
+			var dvSelected = $('#multiS_'+value.id);
+			dvItem.removeClass('multiselected');
+			var newArr = [];
+			$.each(_this.selected, function(key, sel){
+				if (sel.id != dvSelected.attr('id').replace('multiS_',''))
+					newArr.push(sel);
+			});
+			_this.selected = newArr;
+			dvSelected.remove();
+			if (_this.parameters.onchange != undefined)
+				_this.parameters.onchange();
 		});
 	}
 
