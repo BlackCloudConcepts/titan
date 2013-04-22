@@ -79,5 +79,5 @@ Textarea Control
 Double Muiltselect Control
 - Features: multiselect control
 - Parameters: container*, items, selected, height, width, onchange
-- Exposed Actions: setValues(vals), getValues()
+- Exposed Actions: setValues(vals), getValues(), removeValues()
 
