@@ -85,3 +85,7 @@ Double Muiltselect Control
 - Parameters: container*, items, selected, height, width, onchange
 - Exposed Actions: setValues(vals), getValues(), removeValues()
 
+Video Player Control
+- Features: html5 video player control
+- Parameters: container*, videoFormats*, thumbnail*, height, width, controls, autoplay, playcallback, pausecallback(start, end)
+- Exposed Actions: play(), pause(), stop()

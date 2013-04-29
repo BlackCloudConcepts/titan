@@ -37,6 +37,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<script src="/js/checkbox.js"></script>
 	<script src="/js/textarea.js"></script>
 	<script src="/js/doubleMultiselect.js"></script>
+	<script src="/js/videoPlayer.js"></script>
 
 	<link rel="stylesheet" href="/css/master.css" />
 	<link rel="stylesheet" href="/css/button.css" />
@@ -51,6 +52,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 	<link rel="stylesheet" href="/css/checkbox.css" />
 	<link rel="stylesheet" href="/css/textarea.css" />
 	<link rel="stylesheet" href="/css/doubleMultiselect.css" />
+	<link rel="stylesheet" href="/css/videoPlayer.css" />
 
 -->
 	<style>
@@ -79,7 +81,8 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<a href="#hRadioGroup">radio group</a> -
 		<a href="#hCheckbox">checkbox</a> -
 		<a href="#hTextarea">textarea</a> -
-		<a href="#hDoubleMultiselect">double multiselect</a>
+		<a href="#hDoubleMultiselect">double multiselect</a> -
+		<a href="#hVideoPlayer">video player</a>
 		<hr />
 		
 		<h2 id="hTextbox">Input Textbox Control</h2>
@@ -153,6 +156,14 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 		<h5>Parameters: container*, items, height, width, onchange</h5>
 		<h5>Exposed Actions: setValues(vals), getValues(), removeValues()</h5>
 		<div id="dvDoubleMultiselect"></div>		
+
+		<h2 id="hVideoPlayer">Video Player Control</h2>
+		<h5>Features: html5 video player control</h5>
+		<h5>Parameters: container*, videoFormats*, thumbnail*, height, width, controls, autoplay, playcallback, pausecallback(start, end)</h5>
+		<h5>Exposed Actions: play(), pause(), stop()</h5>
+		<div id="dvVideoPlayer"></div>		
+		<div id="dvVideoButtons" style="margin-top:5px;"></div>		
+
 
 	</div>
 </body>
@@ -377,5 +388,45 @@ $(document).ready(function(){
 		}	
 	});
 	ctrlDoubleMultiselect.setValues([{"id" : "cardinals", "name" : "STL Cardinals", "picture_url" : "/images/mlb/cardinals.png"},{"id" : "padres", "name" : "SD Padres", "picture_url" : "/images/mlb/padres.png"}]);
+
+	// video player ================================================
+	var videoFormatItems = [
+		{"format" : "mp4", "url" : "/video/parallelparking.mp4"},
+		{"format" : "ogg", "url" : "/video/parallelparking.ogv"},
+		{"format" : "webm", "url" : "/video/parallelparking.webm"}
+	];
+	var ctrlVideoPlayer = new titan.controls.videoPlayer({
+		'container' 		: $('#dvVideoPlayer'),
+		'videoFormats'		: videoFormatItems,
+		'thumbnail'		: '/video/parallelparking.png',
+		'height'		: 394,
+		'width'			: 700,
+		'controls'		: true,
+		'autoplay'		: false,
+		'playcallback'		: function(){ alert('playing'); },
+		'pausecallback'		: function(start, end){ alert("Paused, played from "+start+" to "+end); }
+	});
+	new titan.controls.button({
+		'container'		: $('#dvVideoButtons'),
+		'buttonSize'		: 'medium',
+		'buttonColor'		: 'green',
+		'buttonText'		: 'Play',
+		'onclick'		: function(){ ctrlVideoPlayer.play(); }
+	});
+	new titan.controls.button({
+		'container'		: $('#dvVideoButtons'),
+		'buttonSize'		: 'medium',
+		'buttonColor'		: 'red',
+		'buttonText'		: 'Pause',
+		'onclick'		: function(){ ctrlVideoPlayer.pause(); }
+	});
+	new titan.controls.button({
+		'container'		: $('#dvVideoButtons'),
+		'buttonSize'		: 'medium',
+		'buttonColor'		: 'blue',
+		'buttonText'		: 'Stop',
+		'onclick'		: function(){ ctrlVideoPlayer.stop(); }
+	});
+
 });
 </script>
