@@ -1,13 +1,13 @@
 /* License: (MIT) Copyright (C) 2013 Scott Gay */
 .titan .toggle.outer {
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
     	background: none repeat scroll 0 0 #f3f3f3;
     	border: 1px solid #AAAAAA;
     	color: #FFFFFF;
     	font-size: 10pt;
-    	height: 19px;
-	width: 52px;
+    	height: 25px;
+	width: 70px;
     	line-height: 1;
     	padding-left : 0px;
 	padding-top : 0px;
@@ -15,45 +15,45 @@
 }
 
 .titan .toggle > .inner {
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
     	border: 1px solid #ffffff;
     	color: #FFFFFF;
     	font-size: 8pt;
-    	height: 13px;
-	width: 17px;
+    	height: 15px;
+	width: 20px;
     	line-height: 1;
-	padding-left : 1px;
-	padding-top : 4px;
+	padding-left : 3px;
+	padding-top : 8px;
 	text-align : center;
 	cursor:pointer;
 }
 
 .titan .toggle > .innertext {
     	color: #999999;
-    	font-size: 8pt;
+    	font-size: 10pt;
     	height: 14px;
-	width: 30px;
+	width: 40px;
     	line-height: 1;
 	padding-left : 1px;
-	padding-top : 4px;
+	padding-top : 7px;
 	text-align : center;
 	cursor:pointer;
 }
 
 .titan .toggle > .on {
-    	background: none repeat scroll 0 0 #3b5998;
+    	background: none repeat scroll 0 0 #53DB60;
 	float : left;
-	box-shadow : 0px 0px 1px 1px #3b5998;
-	-moz-box-shadow : 0px 0px 1px 1px #3b5998;
+	box-shadow : 0px 0px 1px 1px #53DB60;
+	-moz-box-shadow : 0px 0px 1px 1px #53DB60;
 	opacity:0.7;
 	filter:alpha(opacity=70);
 }
 
 .titan .toggle > .off {
-    	background: none repeat scroll 0 0 #AAAAAA;
+    	background: none repeat scroll 0 0 #F44E4E;
 	float : right;
-	box-shadow : 0px 0px 1px 1px #AAAAAA;
-	-moz-box-shadow : 0px 0px 1px 1px #AAAAAA;
+	box-shadow : 0px 0px 1px 1px #F44E4E;
+	-moz-box-shadow : 0px 0px 1px 1px #F44E4E;
 
 }

@@ -29,13 +29,13 @@ titan.controls.grouping = $.klass(titan.controls.base,
 		var vals = this.parameters.values;
 		for (var i = 0;i < len;i++)
 		{
-			var labelWidth = parseInt(this.parameters.width) - 63;
-			this.controls['lbl_' + vals[i].id] 	= $('<div>', {'class' : 'float_left smlabel ellipsis', 'style' : 'color:#3b5998;margin-top:3px;width:' + labelWidth + 'px;'}).appendTo(divGroup).html(vals[i].name);
+			var labelWidth = parseInt(this.parameters.width) - 73;
+			this.controls['lbl_' + vals[i].id] 	= $('<div>', {'class' : 'float_left smlabel ellipsis', 'style' : 'width:' + labelWidth + 'px;'}).appendTo(divGroup).html(vals[i].name);
 			var divToggle 				= $('<div>', {'class' : 'float_right'}).appendTo(divGroup);
 			this.controls['val_' + vals[i].id]	= new titan.controls.toggle({
 				'container' 	: divToggle,
-				'textOn'	: 'Show',
-				'textOff'	: 'Hide',
+				'textOn'	: 'Win',
+				'textOff'	: 'Lose',
 				'checked'	: vals[i].visible
 			});
 			var _this = this;

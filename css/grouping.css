@@ -22,3 +22,9 @@
 .titan .group > .label {
 	font-size 	: 10pt;
 }
+
+.titan .smlabel {
+	font-size	: 10pt;
+	color		: #666666;
+	margin-top	: 6px;
+}
