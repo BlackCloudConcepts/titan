@@ -31,7 +31,7 @@ Input Textbox Control
 Dropdown Control
 - Features: autoComplete, list item images
 - Parameters: container*, data*, width, onchange
-- Exposed Actions: setValue(val), getValue()
+- Exposed Actions: setValue(val), getValue(), clearValue()
 
 Toggle Control
 - Features: on/off style toggle, custom on/off text

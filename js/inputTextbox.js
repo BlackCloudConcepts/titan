@@ -59,7 +59,9 @@ titan.controls.inputTextbox = $.klass(titan.controls.base,
 	setValue : function(val)
 	{
 		this.txtbox.val(val);
-		this.runValidation();
+		if (this.parameters.validationRegex != undefined){
+			this.runValidation();
+		}
 	},
 
 	getValue : function()

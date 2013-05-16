@@ -349,6 +349,17 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		}
 	},
 
+	clearValue : function(){
+		this.ddlSelected.empty();
+		this.ddlSelected.hide();
+		this.ddlInput.empty();
+		this.ddlInput.show();
+		this.selected = undefined;
+		this.ddlRemove.hide();
+		this.ddlArrow.show();
+		this.ddlDropdown.hide();
+	},
+
 	getValue : function(){
 		return this.selected;
 	},	
@@ -481,7 +492,9 @@ titan.controls.inputTextbox = $.klass(titan.controls.base,
 	setValue : function(val)
 	{
 		this.txtbox.val(val);
-		this.runValidation();
+		if (this.parameters.validationRegex != undefined){
+			this.runValidation();
+		}
 	},
 
 	getValue : function()

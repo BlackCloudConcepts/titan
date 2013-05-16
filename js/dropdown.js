@@ -167,6 +167,17 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		}
 	},
 
+	clearValue : function(){
+		this.ddlSelected.empty();
+		this.ddlSelected.hide();
+		this.ddlInput.empty();
+		this.ddlInput.show();
+		this.selected = undefined;
+		this.ddlRemove.hide();
+		this.ddlArrow.show();
+		this.ddlDropdown.hide();
+	},
+
 	getValue : function(){
 		return this.selected;
 	},	
