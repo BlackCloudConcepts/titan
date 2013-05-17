@@ -102,7 +102,7 @@ button {
 .titan .ddlBody {
 	height			: 30px;
 	border-radius		: 5px;
-	border-color		: #999999;
+	border-color		: #024F90;
 	border-style		: solid;
 	border-width		: 1px;
 	font-family		: arial;
@@ -212,7 +212,7 @@ button {
 }
 /* License: (MIT) Copyright (C) 2013 Scott Gay */
 .titan .txtbox {
-	height		: 22px;
+	height		: 18px;
 	border-style	: solid;
 	border-width	: 1px;
 	border-radius	: 5px;
@@ -230,7 +230,7 @@ button {
 	font-size		: 8pt;
 	color			: #999999;
 	background-color	: #ffffff;
-	margin-top		: -41px;
+	margin-top		: -37px;
 	margin-left		: 10px;
 }
 
@@ -239,7 +239,7 @@ button {
 	height			: 30px;
 	width			: 30px;
 	margin-left		: 5px;
-	margin-top		: 2px;
+	margin-top		: 0px;
 }
 
 .titan .valFail {
@@ -247,7 +247,7 @@ button {
 	height			: 30px;
 	width			: 30px;
 	margin-left		: 5px;
-	margin-top		: 2px;
+	margin-top		: 0px;
 }
 /* License: (MIT) Copyright (C) 2013 Scott Gay */
 body {
