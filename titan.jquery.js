@@ -210,6 +210,9 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 		this.ddlRemove = $('<div>', {'class' : 'ddlRemove float_right'}).appendTo(this.ddlBody).hide();
 		$('<div>', {'class' : 'clear'}).appendTo(this.ddlBody);
 
+		if (this.parameters.placeholder != undefined)
+			this.placeholder = $('<div>', {'class' : 'placeholderdd'}).appendTo(this.parameters.container).html(this.parameters.placeholder);
+
 		this.ddlDropdown = $('<div>', {'class' : 'ddlDropdown', 'style' : 'width:'+(this.parameters.width-35)+'px;'}).appendTo(this.ddlBody).hide();
 
 		this.ddlBody.bind('click', function(event){

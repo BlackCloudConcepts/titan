@@ -94,7 +94,7 @@ License: (MIT) Copyright (C) 2013 Scott Gay
 
 		<h2 id="hDropdown">Dropdown Control</h2>
 		<h5>Features: autoComplete, list item images</h5>
-                <h5>Parameters: container*, data*, width, onchange</h5>
+                <h5>Parameters: container*, data*, placeholder, width, onchange</h5>
                 <h5>Exposed Actions: setValue(val), getValue(), clearValue()</h5>
 		<div id="dvDropdown"></div>	
 
@@ -261,6 +261,7 @@ $(document).ready(function(){
 	var ctrlDropdown = new titan.controls.dropdown({
 		'container'	: $('#dvDropdown'),
 		'data'		: dropdownData,
+		'placeholder'	: 'Pick a Team',
 		'width'		: 300,
 		'onchange'	: function(item){
 			alert('Selected the '+item.name);

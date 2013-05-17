@@ -30,7 +30,7 @@ Input Textbox Control
 
 Dropdown Control
 - Features: autoComplete, list item images
-- Parameters: container*, data*, width, onchange
+- Parameters: container*, data*, placeholder, width, onchange
 - Exposed Actions: setValue(val), getValue(), clearValue()
 
 Toggle Control

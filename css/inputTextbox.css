@@ -14,11 +14,11 @@
 
 .titan .placeholder {
 	position		: absolute;
-	padding			: 3px;
+	padding			: 0px 3px 0px 3px;
 	font-size		: 8pt;
 	color			: #999999;
 	background-color	: #ffffff;
-	margin-top		: -42px;
+	margin-top		: -41px;
 	margin-left		: 10px;
 }
 

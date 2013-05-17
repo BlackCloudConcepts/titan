@@ -168,6 +168,18 @@ button {
 	width			: 20px;
 	margin-right		: 10px;
 }
+
+.titan .placeholderdd {
+	position		: absolute;
+	padding			: 0px 3px 0px 3px;
+	font-size		: 8pt;
+	color			: #999999;
+	background-color	: #ffffff;
+	margin-top		: -37px;
+	margin-left		: 10px;
+}
+
+
 /* License: (MIT) Copyright (C) 2013 Scott Gay */
 .titan .group {
 	-moz-border-radius: 5px 5px 5px 5px;
@@ -214,11 +226,11 @@ button {
 
 .titan .placeholder {
 	position		: absolute;
-	padding			: 3px;
+	padding			: 0px 3px 0px 3px;
 	font-size		: 8pt;
 	color			: #999999;
 	background-color	: #ffffff;
-	margin-top		: -42px;
+	margin-top		: -41px;
 	margin-left		: 10px;
 }
 
