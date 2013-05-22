@@ -65,7 +65,7 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 						});
 						var li = $('<div>', {'id' : liData.value, 'class' : 'ddlListItem', 'style' : 'width:'+(_this.parameters.width-45)+'px;'});
 						var image = $('<div>', {'class' : 'float_left ddlImage'}).appendTo(li);
-						$('<div>', {'class' : 'float_left'}).appendTo(li).html(liData.name);
+						$('<div>', {'class' : 'float_left ellipsis', 'style' : 'width:'+(_this.parameters.width-100)+'px;'}).appendTo(li).html(liData.name);
 						$('<div>', {'class' : 'clear'}).appendTo(li);
 
 						$('<img>', {'src' : liData.image, 'style' : 'height:20px;width:20px;'}).appendTo(image);
@@ -137,7 +137,7 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 						_this.selectItem(li, value, true);
 					});
 				var image = $('<div>', {'class' : 'float_left ddlImage'}).appendTo(li);
-				$('<div>', {'class' : 'float_left'}).appendTo(li).html(value.name);
+				$('<div>', {'class' : 'float_left ellipsis', 'style' : 'width:'+(_this.parameters.width-100)+'px;'}).appendTo(li).html(value.name);
 				$('<div>', {'class' : 'clear'}).appendTo(li);
 
 				$('<img>', {'src' : value.image, 'style' : 'height:20px;width:20px;'}).appendTo(image);
@@ -188,7 +188,7 @@ titan.controls.dropdown = $.klass(titan.controls.base,
 	setValue : function(value){
 		var li = $('<div>', {'id' : value.value, 'class' : 'ddlListItem', 'style' : 'width:'+(this.parameters.width-45)+'px;'});
 		var image = $('<div>', {'class' : 'float_left ddlImage'}).appendTo(li);
-		$('<div>', {'class' : 'float_left'}).appendTo(li).html(value.name);
+		$('<div>', {'class' : 'float_left ellipsis', 'style' : 'width:'+(this.parameters.width-100)+'px;'}).appendTo(li).html(value.name);
 		$('<div>', {'class' : 'clear'}).appendTo(li);
 
 		$('<img>', {'src' : value.image, 'style' : 'height:20px;width:20px;'}).appendTo(image);
