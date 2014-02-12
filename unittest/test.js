@@ -134,7 +134,7 @@ test('setValue, getValue', function(){
 // Double Multiselect Control Test
 // ======================================================================================================
 module('Double Multiselect Control Test');
-test('setValue, getValue', function(){
+test('setValues, getValues, removeValues', function(){
 	var doubleMultiselectItems = [
                 {"id" : "cubs", "name" : "CHI Cubs", "picture_url" : "/images/mlb/cubs.png"},
                 {"id" : "yankees", "name" : "NY Yankees", "picture_url" : "/images/mlb/yankees.png"},
