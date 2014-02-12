@@ -13,7 +13,8 @@ Demo:
 
 Unit Tests:
 
-- http://titan.blackcloudconcepts.com/unittest/
+- (Jasmine / Jasmine Standalone RequireJS) http://titan.blackcloudconcepts.com/jasmine/jasmine-standalone-requirejs/SpecRunner.html
+- (QUnit) http://titan.blackcloudconcepts.com/unittest/
 
 GitHub:
 
